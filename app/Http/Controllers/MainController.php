@@ -32,4 +32,18 @@ class MainController extends Controller
         return view('show', compact("comic"));
         // Vado a creare la view di  show
     }
+
+    public function create(){
+
+        return view('create');
+    }
+
+    public function store(Request $request){
+
+        $data = $request -> all();
+        
+        $comic = Comic :: create($data);
+
+        return redirect() -> route('show', $comic -> id);
+    }
 }

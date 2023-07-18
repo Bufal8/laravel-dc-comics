@@ -5,7 +5,8 @@
     <div class="text-center">
         <h1>{{ $comic -> title }}</h1>
         <img width = 500px;  src="{{ $comic -> thumb }}" alt="">
-        <h3>Price: {{ $comic -> price }}</h3>
+        <h3>Price: {{ $comic -> price }}$ </h3>
+        <span>Sale date: {{ $comic -> sale_date}}</span>
     </div>
 
 @endsection
