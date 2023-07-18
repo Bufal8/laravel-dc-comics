@@ -22,6 +22,12 @@
                 Per questo utilizziamo come parametro l'id --}}
                 <a href="{{ route('edit', $comic -> id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
                 {{-- Vado a creare la rotta edit, il metodo nel MainController e successivamente il frontend della stessa --}}
+
+                <form method="POST" action="{{route('destroy', $comic -> id)}}">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value='X'>
+                </form>
             </li>
         @endforeach
     </ul>

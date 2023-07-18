@@ -21,3 +21,4 @@ Route::get('/edit/{id}', [MainController :: class, "edit"]) -> name('edit');
 
 Route::put('/update/{id}', [MainController :: class, "update"]) -> name('update');
 
+Route::delete('/destroy{id}', [MainController :: class, "destroy"]) -> name('destroy');
