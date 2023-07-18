@@ -11,46 +11,47 @@
         Vado a definire nel MainController la funzione store-->
         <form
             method="POST"
-            action="{{route('store')}}"  
+            action="{{route('update', $comic -> id)}}"  
          >
-         @csrf
-
+            @csrf
+            @method('PUT')
+        
             <label for="title">Title: </label>
             <br>
-            <input type="text" name="title" id="title">
+            <input type="text" name="title" id="title" value="{{ $comic -> title}}">
             <br>
 
             <label for="description">Description: </label>
             <br>
-            <input type="text" name="description" id="description">
+            <input type="text" name="description" id="description" value="{{ $comic -> description}}">
             <br>
 
             <label for="thumb">Thumb: </label>
             <br>
-            <input type="text" name="thumb" id="thumb">
+            <input type="text" name="thumb" id="thumb" value="{{ $comic -> thumb}}">
             <br>
 
             <label for="price">Price: </label>
             <br>
-            <input type="text" name="price" id="price">
+            <input type="text" name="price" id="price" value="{{ $comic -> price}}">
             <br>
 
             <label for="series">Series: </label>
             <br>
-            <input type="text" name="series" id="series">
+            <input type="text" name="series" id="series" value="{{ $comic -> series}}">
             <br>
 
             <label for="sale_date">Sale date: </label>
             <br>
-            <input type="text" name="sale_date" id="sale_date">
+            <input type="text" name="sale_date" id="sale_date" value="{{ $comic -> sale_date}}">
             <br>
 
             <label for="type">Type: </label>
             <br>
-            <input type="text" name="type" id="type">
+            <input type="text" name="type" id="type" value="{{ $comic -> type}}">
             <br>
 
-            <input class="my-3" type="submit" value="CREATE">
+            <input class="my-3" type="submit" value="SAVE UPDATE">
 
         </form>
     </div>

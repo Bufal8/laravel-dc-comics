@@ -18,6 +18,10 @@
                 <!-- Creo la rotta show nel web.php -->
                     {{ $comic -> title }}
                 </a>
+                {{-- Questo collegamento reindirizzerà l'utente al form per permettere la modifica del singolo oggetto.
+                Per questo utilizziamo come parametro l'id --}}
+                <a href="{{ route('edit', $comic -> id) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                {{-- Vado a creare la rotta edit, il metodo nel MainController e successivamente il frontend della stessa --}}
             </li>
         @endforeach
     </ul>

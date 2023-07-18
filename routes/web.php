@@ -14,4 +14,10 @@ Route::get('/show/{id}', [MainController :: class, "show"]) -> name('show');
 Route::get('/create', [MainController :: class, "create"] ) -> name('create');
 // Vado a creare il metodo che permette il reindirizzamento nel maincontroller
 
+// Creazione della rotta store con post, in maniera tale che non restituisca una pagina visualizzabile
 Route::post('/store', [MainController :: class, "store"]) -> name('store');
+
+Route::get('/edit/{id}', [MainController :: class, "edit"]) -> name('edit');
+
+Route::put('/update/{id}', [MainController :: class, "update"]) -> name('update');
+

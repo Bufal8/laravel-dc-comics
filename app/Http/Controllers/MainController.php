@@ -37,13 +37,28 @@ class MainController extends Controller
 
         return view('create');
     }
-
+    
+    // Questo metodo permette di prendere l'interezza dei dati inseriti nel form di creazione e restituirli nella variabile comic reindirizzando l'utente alla rotta show tramite un redirect
     public function store(Request $request){
 
         $data = $request -> all();
         
         $comic = Comic :: create($data);
 
+        return redirect() -> route('show', $comic -> id);
+    }
+
+    public function edit($id){
+
+        $comic = Comic :: findOrFail($id);
+
+        return view('edit', compact("comic"));
+    }
+
+    public function update(Request $request, $id){
+        $data = $request -> all();
+        $comic = Comic :: findOrFail($id);
+        $comic -> update($data);
         return redirect() -> route('show', $comic -> id);
     }
 }
