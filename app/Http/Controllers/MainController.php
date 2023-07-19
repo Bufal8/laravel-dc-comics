@@ -41,7 +41,22 @@ class MainController extends Controller
     // Questo metodo permette di prendere l'interezza dei dati inseriti nel form di creazione e restituirli nella variabile comic reindirizzando l'utente alla rotta show tramite un redirect
     public function store(Request $request){
 
-        $data = $request -> all();
+        $data = $request -> validate([
+            
+            'title' => 'required|max:64',
+            'description' => 'required|max:255',
+            'thumb' => 'required|max:64',
+            'price' => 'required|max:64',
+            'series' => 'required|max:64',
+            'sale_date' => 'required|date|max:64',
+            'type' => 'required|max:64',
+            
+            
+            
+            
+            
+            
+        ]);
         
         $comic = Comic :: create($data);
 
